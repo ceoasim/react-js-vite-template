@@ -1,0 +1,84 @@
+{
+  "name": "hm-e-commerce",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.5",
+    "@mui/material": "^7.3.5",
+    "@reduxjs/toolkit": "^2.2.7",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.0",
+    "@toolpad/core": "^0.16.0",
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.19",
+    "embla-carousel-react": "^8.6.0",
+    "leaflet": "^1.9.4",
+    "pusher-js": "^8.4.0-rc2",
+    "qrcode.react": "^4.2.0",
+    "query-string": "^9.1.0",
+    "react": "18.3.1",
+    "react-barcode": "^1.5.3",
+    "react-dom": "18.3.1",
+    "react-dropzone": "^14.2.3",
+    "react-international-phone": "2.0.4",
+    "react-lazy-load-image-component": "^1.6.3",
+    "react-leaflet": "4.2.1",
+    "react-redux": "^9.1.2",
+    "react-router": "^7.9.6",
+    "react-share": "^5.2.2",
+    "react-timer-hook": "^4.0.5",
+    "react-toastify": "^10.0.5",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.3.0",
+    "web-vitals": "^3.5.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "rollup-plugin-critical": "^1.0.15",
+    "rollup-plugin-visualizer": "^6.0.5",
+    "terser": "^5.44.1",
+    "typescript": "5.3.3",
+    "vite": "^6.1.6",
+    "vite-imagetools": "^6.0.2",
+    "vite-plugin-purgecss": "^0.2.13",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "scripts": {
+    "start": "node api.js && vite",
+    "build": "node api.js && vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000"
+  },
+  "browserslist": {
+    "production": [
+      "defaults",
+      "not IE 11",
+      "not op_mini all",
+      "Chrome >= 90",
+      "Firefox >= 88",
+      "Safari >= 14",
+      "Edge >= 90"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "resolutions": {
+    "cheerio": "<1.1.0",
+    "jsdom": "<27.0.0"
+  },
+  "overrides": {
+    "cheerio": "<1.1.0",
+    "jsdom": "<27.0.0"
+  }
+}

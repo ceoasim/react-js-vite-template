@@ -1,0 +1,36 @@
+name: Deploy HM-Web App
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  SERVER_USER: hmawani
+  SERVER_IP: ${{ secrets.SERVER_IP }}
+  APP_DIR: "/home/hmawani/app/hm-web"
+  NPM: "/home/hmawani/.asdf/shims/npm"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.HOSTINGER_SERVER_PRIVATE_KEY }}
+
+      - name: Deploy to Server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_IP} "
+            export GIT_SSH_COMMAND='ssh -i /home/hmawani/.ssh/nabeegh_github' &&
+            cd ${APP_DIR} &&
+            git stash &&
+            git pull origin main &&
+            rm -f package-lock.json && $NPM install --legacy-peer-deps &&
+            $NPM run build &&
+            cp -r /home/hmawani/app/hm-web/build/* /var/www/hmawani-web/ &&
+            echo 'Deployment successful!'"
+
